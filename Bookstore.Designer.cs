@@ -34,6 +34,9 @@
             txtTaxRate = new TextBox();
             label2 = new Label();
             pictureBox1 = new PictureBox();
+            label3 = new Label();
+            label4 = new Label();
+            lblTaxAmount = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -79,12 +82,42 @@
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(100, 387);
+            label3.Name = "label3";
+            label3.Size = new Size(145, 32);
+            label3.TabIndex = 5;
+            label3.Text = "Tax Amount:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(439, 307);
+            label4.Name = "label4";
+            label4.Size = new Size(34, 32);
+            label4.TabIndex = 6;
+            label4.Text = "%";
+            // 
+            // lblTaxAmount
+            // 
+            lblTaxAmount.AutoSize = true;
+            lblTaxAmount.Location = new Point(322, 387);
+            lblTaxAmount.Name = "lblTaxAmount";
+            lblTaxAmount.Size = new Size(140, 32);
+            lblTaxAmount.TabIndex = 7;
+            lblTaxAmount.Text = "Tax Amount";
+            // 
             // Bookstore
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1678, 959);
+            Controls.Add(lblTaxAmount);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(pictureBox1);
             Controls.Add(txtTaxRate);
             Controls.Add(label2);
@@ -105,5 +138,8 @@
         private TextBox txtTaxRate;
         private Label label2;
         private PictureBox pictureBox1;
+        private Label label3;
+        private Label label4;
+        private Label lblTaxAmount;
     }
 }
