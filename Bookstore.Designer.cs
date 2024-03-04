@@ -39,6 +39,8 @@
             lblTaxAmount = new Label();
             label6 = new Label();
             lblBalance = new Label();
+            btnCalculate = new Button();
+            btnReset = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -118,9 +120,9 @@
             label6.AutoSize = true;
             label6.Location = new Point(100, 475);
             label6.Name = "label6";
-            label6.Size = new Size(145, 32);
+            label6.Size = new Size(152, 32);
             label6.TabIndex = 8;
-            label6.Text = "Tax Amount:";
+            label6.Text = "Balance Due:";
             // 
             // lblBalance
             // 
@@ -133,12 +135,37 @@
             lblBalance.TabIndex = 10;
             lblBalance.Text = "Balance";
             // 
+            // btnCalculate
+            // 
+            btnCalculate.BackColor = Color.Firebrick;
+            btnCalculate.ForeColor = Color.White;
+            btnCalculate.Location = new Point(109, 585);
+            btnCalculate.Name = "btnCalculate";
+            btnCalculate.Size = new Size(183, 69);
+            btnCalculate.TabIndex = 11;
+            btnCalculate.Text = "Calculate";
+            btnCalculate.UseVisualStyleBackColor = false;
+            btnCalculate.Click += btnCalculate_Click;
+            // 
+            // btnReset
+            // 
+            btnReset.BackColor = Color.Firebrick;
+            btnReset.ForeColor = Color.White;
+            btnReset.Location = new Point(322, 585);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(183, 69);
+            btnReset.TabIndex = 12;
+            btnReset.Text = "Reset";
+            btnReset.UseVisualStyleBackColor = false;
+            // 
             // Bookstore
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1678, 959);
+            Controls.Add(btnReset);
+            Controls.Add(btnCalculate);
             Controls.Add(lblBalance);
             Controls.Add(lblTaxAmount);
             Controls.Add(label6);
@@ -166,9 +193,10 @@
         private PictureBox pictureBox1;
         private Label label3;
         private Label label4;
-        private Label lblTaxAmount;
-        private Label lblTaxAmount;
+        private Label lblTaxAmount;        
         private Label label6;
         private Label lblBalance;
+        private Button btnCalculate;
+        private Button btnReset;
     }
 }
