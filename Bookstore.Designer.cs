@@ -37,6 +37,8 @@
             label3 = new Label();
             label4 = new Label();
             lblTaxAmount = new Label();
+            label6 = new Label();
+            lblBalance = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -103,11 +105,33 @@
             // lblTaxAmount
             // 
             lblTaxAmount.AutoSize = true;
-            lblTaxAmount.Location = new Point(322, 387);
+            lblTaxAmount.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTaxAmount.ForeColor = Color.FromArgb(192, 0, 0);
+            lblTaxAmount.Location = new Point(322, 373);
             lblTaxAmount.Name = "lblTaxAmount";
-            lblTaxAmount.Size = new Size(140, 32);
-            lblTaxAmount.TabIndex = 7;
+            lblTaxAmount.Size = new Size(232, 50);
+            lblTaxAmount.TabIndex = 9;
             lblTaxAmount.Text = "Tax Amount";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(100, 475);
+            label6.Name = "label6";
+            label6.Size = new Size(145, 32);
+            label6.TabIndex = 8;
+            label6.Text = "Tax Amount:";
+            // 
+            // lblBalance
+            // 
+            lblBalance.AutoSize = true;
+            lblBalance.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBalance.ForeColor = Color.FromArgb(192, 0, 0);
+            lblBalance.Location = new Point(322, 457);
+            lblBalance.Name = "lblBalance";
+            lblBalance.Size = new Size(157, 50);
+            lblBalance.TabIndex = 10;
+            lblBalance.Text = "Balance";
             // 
             // Bookstore
             // 
@@ -115,7 +139,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1678, 959);
+            Controls.Add(lblBalance);
             Controls.Add(lblTaxAmount);
+            Controls.Add(label6);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(pictureBox1);
@@ -141,5 +167,8 @@
         private Label label3;
         private Label label4;
         private Label lblTaxAmount;
+        private Label lblTaxAmount;
+        private Label label6;
+        private Label lblBalance;
     }
 }
