@@ -36,12 +36,21 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             label4 = new Label();
-            lblTaxAmount = new Label();
             label6 = new Label();
-            lblBalance = new Label();
             btnCalculate = new Button();
             btnReset = new Button();
+            lblTaxAmount = new Label();
+            lblBalance = new Label();
+            groupBox1 = new GroupBox();
+            rdoOH = new RadioButton();
+            rdoFL = new RadioButton();
+            rdoNY = new RadioButton();
+            groupBox2 = new GroupBox();
+            rdoYes = new RadioButton();
+            rdoNo = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -62,8 +71,10 @@
             // 
             // txtTaxRate
             // 
+            txtTaxRate.BackColor = SystemColors.ButtonFace;
             txtTaxRate.Location = new Point(322, 304);
             txtTaxRate.Name = "txtTaxRate";
+            txtTaxRate.ReadOnly = true;
             txtTaxRate.Size = new Size(98, 39);
             txtTaxRate.TabIndex = 3;
             // 
@@ -104,17 +115,6 @@
             label4.TabIndex = 6;
             label4.Text = "%";
             // 
-            // lblTaxAmount
-            // 
-            lblTaxAmount.AutoSize = true;
-            lblTaxAmount.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTaxAmount.ForeColor = Color.FromArgb(192, 0, 0);
-            lblTaxAmount.Location = new Point(322, 373);
-            lblTaxAmount.Name = "lblTaxAmount";
-            lblTaxAmount.Size = new Size(232, 50);
-            lblTaxAmount.TabIndex = 9;
-            lblTaxAmount.Text = "Tax Amount";
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -123,17 +123,6 @@
             label6.Size = new Size(152, 32);
             label6.TabIndex = 8;
             label6.Text = "Balance Due:";
-            // 
-            // lblBalance
-            // 
-            lblBalance.AutoSize = true;
-            lblBalance.Font = new Font("Segoe UI", 13.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBalance.ForeColor = Color.FromArgb(192, 0, 0);
-            lblBalance.Location = new Point(322, 457);
-            lblBalance.Name = "lblBalance";
-            lblBalance.Size = new Size(157, 50);
-            lblBalance.TabIndex = 10;
-            lblBalance.Text = "Balance";
             // 
             // btnCalculate
             // 
@@ -158,16 +147,124 @@
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = false;
             // 
+            // lblTaxAmount
+            // 
+            lblTaxAmount.AutoSize = true;
+            lblTaxAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTaxAmount.ForeColor = Color.FromArgb(192, 0, 0);
+            lblTaxAmount.Location = new Point(328, 387);
+            lblTaxAmount.Name = "lblTaxAmount";
+            lblTaxAmount.Size = new Size(202, 45);
+            lblTaxAmount.TabIndex = 13;
+            lblTaxAmount.Text = "Tax Amount";
+            lblTaxAmount.Visible = false;
+            // 
+            // lblBalance
+            // 
+            lblBalance.AutoSize = true;
+            lblBalance.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBalance.ForeColor = Color.FromArgb(192, 0, 0);
+            lblBalance.Location = new Point(328, 475);
+            lblBalance.Name = "lblBalance";
+            lblBalance.Size = new Size(135, 45);
+            lblBalance.TabIndex = 14;
+            lblBalance.Text = "Balance";
+            lblBalance.Visible = false;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(rdoOH);
+            groupBox1.Controls.Add(rdoFL);
+            groupBox1.Controls.Add(rdoNY);
+            groupBox1.Location = new Point(782, 215);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(400, 233);
+            groupBox1.TabIndex = 20;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "State";
+            // 
+            // rdoOH
+            // 
+            rdoOH.AutoSize = true;
+            rdoOH.Location = new Point(25, 96);
+            rdoOH.Name = "rdoOH";
+            rdoOH.Size = new Size(97, 36);
+            rdoOH.TabIndex = 16;
+            rdoOH.TabStop = true;
+            rdoOH.Text = "Ohio";
+            rdoOH.UseVisualStyleBackColor = true;
+            rdoOH.CheckedChanged += rdoOH_CheckedChanged;
+            // 
+            // rdoFL
+            // 
+            rdoFL.AutoSize = true;
+            rdoFL.Location = new Point(25, 42);
+            rdoFL.Name = "rdoFL";
+            rdoFL.Size = new Size(117, 36);
+            rdoFL.TabIndex = 15;
+            rdoFL.TabStop = true;
+            rdoFL.Text = "Florida";
+            rdoFL.UseVisualStyleBackColor = true;
+            rdoFL.CheckedChanged += rdoFL_CheckedChanged;
+            // 
+            // rdoNY
+            // 
+            rdoNY.AutoSize = true;
+            rdoNY.Location = new Point(25, 153);
+            rdoNY.Name = "rdoNY";
+            rdoNY.Size = new Size(145, 36);
+            rdoNY.TabIndex = 17;
+            rdoNY.TabStop = true;
+            rdoNY.Text = "New York";
+            rdoNY.UseVisualStyleBackColor = true;
+            rdoNY.CheckedChanged += rdoNY_CheckedChanged;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(rdoYes);
+            groupBox2.Controls.Add(rdoNo);
+            groupBox2.Location = new Point(1230, 219);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(400, 200);
+            groupBox2.TabIndex = 21;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Is tax exempt?";
+            // 
+            // rdoYes
+            // 
+            rdoYes.AutoSize = true;
+            rdoYes.Location = new Point(28, 51);
+            rdoYes.Name = "rdoYes";
+            rdoYes.Size = new Size(79, 36);
+            rdoYes.TabIndex = 18;
+            rdoYes.TabStop = true;
+            rdoYes.Text = "Yes";
+            rdoYes.UseVisualStyleBackColor = true;
+            rdoYes.CheckedChanged += rdoYes_CheckedChanged;
+            // 
+            // rdoNo
+            // 
+            rdoNo.AutoSize = true;
+            rdoNo.Location = new Point(28, 105);
+            rdoNo.Name = "rdoNo";
+            rdoNo.Size = new Size(77, 36);
+            rdoNo.TabIndex = 19;
+            rdoNo.TabStop = true;
+            rdoNo.Text = "No";
+            rdoNo.UseVisualStyleBackColor = true;
+            // 
             // Bookstore
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1678, 959);
-            Controls.Add(btnReset);
-            Controls.Add(btnCalculate);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
             Controls.Add(lblBalance);
             Controls.Add(lblTaxAmount);
+            Controls.Add(btnReset);
+            Controls.Add(btnCalculate);
             Controls.Add(label6);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -180,6 +277,10 @@
             Text = "Bookstore";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -193,10 +294,17 @@
         private PictureBox pictureBox1;
         private Label label3;
         private Label label4;
-        private Label lblTaxAmount;        
         private Label label6;
-        private Label lblBalance;
         private Button btnCalculate;
         private Button btnReset;
+        private Label lblTaxAmount;
+        private Label lblBalance;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private RadioButton rdoOH;
+        private RadioButton rdoFL;
+        private RadioButton rdoNY;
+        private RadioButton rdoYes;
+        private RadioButton rdoNo;
     }
 }
