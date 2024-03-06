@@ -48,6 +48,13 @@
             groupBox2 = new GroupBox();
             rdoYes = new RadioButton();
             rdoNo = new RadioButton();
+            lstCampusCredit = new ListBox();
+            txtCampusCredit = new TextBox();
+            label5 = new Label();
+            cboCampusCredit = new ComboBox();
+            txtDonation = new TextBox();
+            label7 = new Label();
+            cblDonation = new CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -100,7 +107,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(100, 387);
+            label3.Location = new Point(104, 606);
             label3.Name = "label3";
             label3.Size = new Size(145, 32);
             label3.TabIndex = 5;
@@ -118,7 +125,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(100, 475);
+            label6.Location = new Point(104, 694);
             label6.Name = "label6";
             label6.Size = new Size(152, 32);
             label6.TabIndex = 8;
@@ -128,7 +135,7 @@
             // 
             btnCalculate.BackColor = Color.Firebrick;
             btnCalculate.ForeColor = Color.White;
-            btnCalculate.Location = new Point(109, 585);
+            btnCalculate.Location = new Point(113, 804);
             btnCalculate.Name = "btnCalculate";
             btnCalculate.Size = new Size(183, 69);
             btnCalculate.TabIndex = 11;
@@ -140,7 +147,7 @@
             // 
             btnReset.BackColor = Color.Firebrick;
             btnReset.ForeColor = Color.White;
-            btnReset.Location = new Point(322, 585);
+            btnReset.Location = new Point(326, 804);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(183, 69);
             btnReset.TabIndex = 12;
@@ -152,7 +159,7 @@
             lblTaxAmount.AutoSize = true;
             lblTaxAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTaxAmount.ForeColor = Color.FromArgb(192, 0, 0);
-            lblTaxAmount.Location = new Point(328, 387);
+            lblTaxAmount.Location = new Point(332, 606);
             lblTaxAmount.Name = "lblTaxAmount";
             lblTaxAmount.Size = new Size(202, 45);
             lblTaxAmount.TabIndex = 13;
@@ -164,7 +171,7 @@
             lblBalance.AutoSize = true;
             lblBalance.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBalance.ForeColor = Color.FromArgb(192, 0, 0);
-            lblBalance.Location = new Point(328, 475);
+            lblBalance.Location = new Point(332, 694);
             lblBalance.Name = "lblBalance";
             lblBalance.Size = new Size(135, 45);
             lblBalance.TabIndex = 14;
@@ -252,6 +259,74 @@
             rdoNo.TabStop = true;
             rdoNo.Text = "No";
             rdoNo.UseVisualStyleBackColor = true;
+            rdoNo.CheckedChanged += rdoNo_CheckedChanged;
+            // 
+            // lstCampusCredit
+            // 
+            lstCampusCredit.FormattingEnabled = true;
+            lstCampusCredit.Items.AddRange(new object[] { "Student Credit ($20)", "Faculty Credit ($15)", "Staff Credit ($10)" });
+            lstCampusCredit.Location = new Point(807, 475);
+            lstCampusCredit.Name = "lstCampusCredit";
+            lstCampusCredit.Size = new Size(255, 100);
+            lstCampusCredit.TabIndex = 22;
+            lstCampusCredit.SelectedIndexChanged += lstCampusCredit_SelectedIndexChanged;
+            // 
+            // txtCampusCredit
+            // 
+            txtCampusCredit.BackColor = SystemColors.ButtonFace;
+            txtCampusCredit.Location = new Point(322, 396);
+            txtCampusCredit.Name = "txtCampusCredit";
+            txtCampusCredit.ReadOnly = true;
+            txtCampusCredit.Size = new Size(98, 39);
+            txtCampusCredit.TabIndex = 24;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(100, 396);
+            label5.Name = "label5";
+            label5.Size = new Size(176, 32);
+            label5.TabIndex = 23;
+            label5.Text = "Campus Credit:";
+            // 
+            // cboCampusCredit
+            // 
+            cboCampusCredit.FormattingEnabled = true;
+            cboCampusCredit.Items.AddRange(new object[] { "Student Credit ($20)", "Faculty Credit ($15)", "Staff Credit ($10)" });
+            cboCampusCredit.Location = new Point(1215, 481);
+            cboCampusCredit.Name = "cboCampusCredit";
+            cboCampusCredit.Size = new Size(242, 40);
+            cboCampusCredit.TabIndex = 25;
+            cboCampusCredit.Text = "---Please Select---";
+            cboCampusCredit.SelectedIndexChanged += cboCampusCredit_SelectedIndexChanged;
+            // 
+            // txtDonation
+            // 
+            txtDonation.BackColor = SystemColors.ButtonFace;
+            txtDonation.Location = new Point(326, 489);
+            txtDonation.Name = "txtDonation";
+            txtDonation.ReadOnly = true;
+            txtDonation.Size = new Size(98, 39);
+            txtDonation.TabIndex = 27;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(104, 489);
+            label7.Name = "label7";
+            label7.Size = new Size(118, 32);
+            label7.TabIndex = 26;
+            label7.Text = "Donation:";
+            // 
+            // cblDonation
+            // 
+            cblDonation.FormattingEnabled = true;
+            cblDonation.Items.AddRange(new object[] { "Scholarship ($1)", "Saints Pantry ($2)", "Infrastructure ($3)" });
+            cblDonation.Location = new Point(803, 672);
+            cblDonation.Name = "cblDonation";
+            cblDonation.Size = new Size(243, 112);
+            cblDonation.TabIndex = 28;
+            cblDonation.SelectedIndexChanged += cblDonation_SelectedIndexChanged;
             // 
             // Bookstore
             // 
@@ -259,6 +334,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1678, 959);
+            Controls.Add(cblDonation);
+            Controls.Add(txtDonation);
+            Controls.Add(label7);
+            Controls.Add(cboCampusCredit);
+            Controls.Add(txtCampusCredit);
+            Controls.Add(label5);
+            Controls.Add(lstCampusCredit);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(lblBalance);
@@ -306,5 +388,12 @@
         private RadioButton rdoNY;
         private RadioButton rdoYes;
         private RadioButton rdoNo;
+        private ListBox lstCampusCredit;
+        private TextBox txtCampusCredit;
+        private Label label5;
+        private ComboBox cboCampusCredit;
+        private TextBox txtDonation;
+        private Label label7;
+        private CheckedListBox cblDonation;
     }
 }

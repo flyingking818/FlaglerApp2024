@@ -70,7 +70,7 @@ namespace FlaglerApp2024
 
         private void rdoFL_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdoFL.Checked)
+            if (rdoFL.Checked && rdoYes.Checked != true)
             {
                 txtTaxRate.Text = FL_RATE.ToString();
             }
@@ -78,7 +78,7 @@ namespace FlaglerApp2024
 
         private void rdoOH_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdoOH.Checked)
+            if (rdoOH.Checked && rdoYes.Checked != true)
             {
                 txtTaxRate.Text = OH_RATE.ToString();
             }
@@ -86,7 +86,7 @@ namespace FlaglerApp2024
 
         private void rdoNY_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdoNY.Checked)
+            if (rdoNY.Checked && rdoYes.Checked != true)
             {
                 txtTaxRate.Text = NY_RATE.ToString();
             }
@@ -103,6 +103,89 @@ namespace FlaglerApp2024
         private void cblCampusCredit_SelectedIndexChanged(object sender, EventArgs e)
         {
             MessageBox.Show("This is called");
+        }
+
+        private void rdoNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoFL.Checked)
+            {
+                txtTaxRate.Text = FL_RATE.ToString();
+            }
+            else if (rdoNY.Checked)
+            {
+                txtTaxRate.Text = NY_RATE.ToString();
+            }
+            else if (rdoOH.Checked)
+            {
+                txtTaxRate.Text = OH_RATE.ToString();
+            }
+            else
+            {
+                txtTaxRate.Text = "0";
+            }
+        }
+
+        private void lstCampusCredit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (lstCampusCredit.SelectedIndex)
+            {
+                case 0:
+                    txtCampusCredit.Text = "20";
+                    break;
+                case 1:
+                    txtCampusCredit.Text = "15";
+                    break;
+                case 2:
+                    txtCampusCredit.Text = "10";
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void cboCampusCredit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cboCampusCredit.SelectedIndex)
+            {
+                case 0:
+                    txtCampusCredit.Text = "20";
+                    break;
+                case 1:
+                    txtCampusCredit.Text = "15";
+                    break;
+                case 2:
+                    txtCampusCredit.Text = "10";
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void cblDonation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            double donationTotal = 0;
+            for (int i = 0; i< cblDonation.Items.Count; i++) { 
+                if (cblDonation.GetItemChecked(i))
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            donationTotal += 1;
+                            break;
+                        case 1:
+                            donationTotal += 2;
+                            break;
+                        case 2:
+                            donationTotal += 3;
+                            break;
+                        default:
+                            txtDonation.Text = "Error!";
+                            break;
+                    }
+                }
+            
+            }
+            txtDonation.Text = donationTotal.ToString();
         }
     }
 
