@@ -25,10 +25,16 @@ namespace FlaglerApp2024
             //MessageBox.Show("hi there");
 
             //Declare variables
+            /*
             double salesAmount = 0;
             double taxRate = 0;
             double taxAmount = 0;
             double balance = 0;
+            */
+
+            double salesAmount = 0, taxRate = 0, taxAmount = 0,
+                campusCredit = 0, donation = 0, balance = 0;
+
 
             //set the tax rate based on user input - we don't do this here.
             //instead, we'll use another event based the radio button!
@@ -50,16 +56,17 @@ namespace FlaglerApp2024
                 return;
             }
 
+            //For campusCredit and donation, TryParse is not neccessary as the inputs are controlled by us.
+            campusCredit = Double.Parse(txtCampusCredit.Text); //for windows app, web app
+            donation = Convert.ToDouble(txtDonation.Text);  //console app
+
             //Processing
             lblTaxAmount.Visible = true;
             lblBalance.Visible = true;
 
 
-
-
-
             taxAmount = salesAmount * taxRate / 100;
-            balance = salesAmount + taxAmount;
+            balance = salesAmount + taxAmount - campusCredit + donation;
 
             //Output
             lblTaxAmount.Text = taxAmount.ToString("C");
@@ -164,7 +171,8 @@ namespace FlaglerApp2024
         private void cblDonation_SelectedIndexChanged(object sender, EventArgs e)
         {
             double donationTotal = 0;
-            for (int i = 0; i< cblDonation.Items.Count; i++) { 
+            for (int i = 0; i < cblDonation.Items.Count; i++)
+            {
                 if (cblDonation.GetItemChecked(i))
                 {
                     switch (i)
@@ -183,9 +191,25 @@ namespace FlaglerApp2024
                             break;
                     }
                 }
-            
+
             }
             txtDonation.Text = donationTotal.ToString();
+        }
+
+        private void txtSalesAmount_MouseHover(object sender, EventArgs e)
+        {
+            lblMessage.Text = "Please enter the sales amount!";
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void scholarshipToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Scholarship scholarshipFrm = new Scholarship();
+            scholarshipFrm.Show();
         }
     }
 

@@ -55,9 +55,19 @@
             txtDonation = new TextBox();
             label7 = new Label();
             cblDonation = new CheckedListBox();
+            lblMessage = new Label();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            openToolStripMenuItem = new ToolStripMenuItem();
+            saveToolStripMenuItem = new ToolStripMenuItem();
+            printToolStripMenuItem = new ToolStripMenuItem();
+            formsToolStripMenuItem = new ToolStripMenuItem();
+            bookstoreToolStripMenuItem = new ToolStripMenuItem();
+            scholarshipToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -75,6 +85,7 @@
             txtSalesAmount.Name = "txtSalesAmount";
             txtSalesAmount.Size = new Size(401, 39);
             txtSalesAmount.TabIndex = 1;
+            txtSalesAmount.MouseHover += btnCalculate_Click;
             // 
             // txtTaxRate
             // 
@@ -97,7 +108,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(364, 24);
+            pictureBox1.Location = new Point(365, 49);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(914, 160);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -328,12 +339,79 @@
             cblDonation.TabIndex = 28;
             cblDonation.SelectedIndexChanged += cblDonation_SelectedIndexChanged;
             // 
+            // lblMessage
+            // 
+            lblMessage.AutoSize = true;
+            lblMessage.ForeColor = Color.FromArgb(192, 0, 0);
+            lblMessage.Location = new Point(803, 822);
+            lblMessage.Name = "lblMessage";
+            lblMessage.Size = new Size(108, 32);
+            lblMessage.TabIndex = 29;
+            lblMessage.Text = "Message";
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(32, 32);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, formsToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1678, 42);
+            menuStrip1.TabIndex = 30;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openToolStripMenuItem, saveToolStripMenuItem, printToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(71, 38);
+            fileToolStripMenuItem.Text = "File";
+            // 
+            // openToolStripMenuItem
+            // 
+            openToolStripMenuItem.Name = "openToolStripMenuItem";
+            openToolStripMenuItem.Size = new Size(359, 44);
+            openToolStripMenuItem.Text = "Open";
+            // 
+            // saveToolStripMenuItem
+            // 
+            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            saveToolStripMenuItem.Size = new Size(359, 44);
+            saveToolStripMenuItem.Text = "Save";
+            // 
+            // printToolStripMenuItem
+            // 
+            printToolStripMenuItem.Name = "printToolStripMenuItem";
+            printToolStripMenuItem.Size = new Size(359, 44);
+            printToolStripMenuItem.Text = "Print";
+            printToolStripMenuItem.Click += printToolStripMenuItem_Click;
+            // 
+            // formsToolStripMenuItem
+            // 
+            formsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { bookstoreToolStripMenuItem, scholarshipToolStripMenuItem });
+            formsToolStripMenuItem.Name = "formsToolStripMenuItem";
+            formsToolStripMenuItem.Size = new Size(99, 38);
+            formsToolStripMenuItem.Text = "Forms";
+            // 
+            // bookstoreToolStripMenuItem
+            // 
+            bookstoreToolStripMenuItem.Name = "bookstoreToolStripMenuItem";
+            bookstoreToolStripMenuItem.Size = new Size(359, 44);
+            bookstoreToolStripMenuItem.Text = "Bookstore";
+            // 
+            // scholarshipToolStripMenuItem
+            // 
+            scholarshipToolStripMenuItem.Name = "scholarshipToolStripMenuItem";
+            scholarshipToolStripMenuItem.Size = new Size(359, 44);
+            scholarshipToolStripMenuItem.Text = "Scholarship";
+            scholarshipToolStripMenuItem.Click += scholarshipToolStripMenuItem_Click;
+            // 
             // Bookstore
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 224, 192);
             ClientSize = new Size(1678, 959);
+            Controls.Add(lblMessage);
             Controls.Add(cblDonation);
             Controls.Add(txtDonation);
             Controls.Add(label7);
@@ -355,6 +433,8 @@
             Controls.Add(label2);
             Controls.Add(txtSalesAmount);
             Controls.Add(label1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Bookstore";
             Text = "Bookstore";
             Load += Form1_Load;
@@ -363,6 +443,8 @@
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -395,5 +477,14 @@
         private TextBox txtDonation;
         private Label label7;
         private CheckedListBox cblDonation;
+        private Label lblMessage;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripMenuItem printToolStripMenuItem;
+        private ToolStripMenuItem formsToolStripMenuItem;
+        private ToolStripMenuItem bookstoreToolStripMenuItem;
+        private ToolStripMenuItem scholarshipToolStripMenuItem;
     }
 }
