@@ -30,7 +30,7 @@ namespace FlaglerApp2024
             //Clear the current chart elements first
             SalaryColumnChart.Series.Clear();
 
-            //Let's add the columns (data series)
+            //Let's add the columns (data series), either text or number would work.
             SalaryColumnChart.Series.Add("Ariana");
             SalaryColumnChart.Series["Ariana"].Points.AddXY("Salary", 70000);
 
