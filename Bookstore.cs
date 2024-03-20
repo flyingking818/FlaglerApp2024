@@ -211,6 +211,12 @@ namespace FlaglerApp2024
             Scholarship scholarshipFrm = new Scholarship();
             scholarshipFrm.Show();
         }
+
+        private void jobOfferToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            JobOffer frmJobOffer = new JobOffer();  
+            frmJobOffer.Show();
+        }
     }
 
 

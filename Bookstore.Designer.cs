@@ -64,6 +64,7 @@
             formsToolStripMenuItem = new ToolStripMenuItem();
             bookstoreToolStripMenuItem = new ToolStripMenuItem();
             scholarshipToolStripMenuItem = new ToolStripMenuItem();
+            jobOfferToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -369,25 +370,25 @@
             // openToolStripMenuItem
             // 
             openToolStripMenuItem.Name = "openToolStripMenuItem";
-            openToolStripMenuItem.Size = new Size(359, 44);
+            openToolStripMenuItem.Size = new Size(206, 44);
             openToolStripMenuItem.Text = "Open";
             // 
             // saveToolStripMenuItem
             // 
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new Size(359, 44);
+            saveToolStripMenuItem.Size = new Size(206, 44);
             saveToolStripMenuItem.Text = "Save";
             // 
             // printToolStripMenuItem
             // 
             printToolStripMenuItem.Name = "printToolStripMenuItem";
-            printToolStripMenuItem.Size = new Size(359, 44);
+            printToolStripMenuItem.Size = new Size(206, 44);
             printToolStripMenuItem.Text = "Print";
             printToolStripMenuItem.Click += printToolStripMenuItem_Click;
             // 
             // formsToolStripMenuItem
             // 
-            formsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { bookstoreToolStripMenuItem, scholarshipToolStripMenuItem });
+            formsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { bookstoreToolStripMenuItem, scholarshipToolStripMenuItem, jobOfferToolStripMenuItem });
             formsToolStripMenuItem.Name = "formsToolStripMenuItem";
             formsToolStripMenuItem.Size = new Size(99, 38);
             formsToolStripMenuItem.Text = "Forms";
@@ -404,6 +405,13 @@
             scholarshipToolStripMenuItem.Size = new Size(359, 44);
             scholarshipToolStripMenuItem.Text = "Scholarship";
             scholarshipToolStripMenuItem.Click += scholarshipToolStripMenuItem_Click;
+            // 
+            // jobOfferToolStripMenuItem
+            // 
+            jobOfferToolStripMenuItem.Name = "jobOfferToolStripMenuItem";
+            jobOfferToolStripMenuItem.Size = new Size(359, 44);
+            jobOfferToolStripMenuItem.Text = "Job Offer";
+            jobOfferToolStripMenuItem.Click += jobOfferToolStripMenuItem_Click;
             // 
             // Bookstore
             // 
@@ -486,5 +494,6 @@
         private ToolStripMenuItem formsToolStripMenuItem;
         private ToolStripMenuItem bookstoreToolStripMenuItem;
         private ToolStripMenuItem scholarshipToolStripMenuItem;
+        private ToolStripMenuItem jobOfferToolStripMenuItem;
     }
 }
